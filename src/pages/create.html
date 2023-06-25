@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center py-4 font-semibold">Create Your New product</h1>
+      <div class="new-product">
+        <div class="py-2 text-center">
+          <label for="productId">Product ID:</label>
+          <input
+            class="border-2 border-slate-700 rounded"
+            type="text"
+            id="productId"
+          />
+        </div>
+        <div class="py-2 text-center">
+          <label for="productName">Product Name:</label>
+          <input
+            class="border-2 border-slate-700 rounded"
+            type="text"
+            id="productName"
+          />
+        </div>
+        <div class="py-2 text-center">
+          <label for="productPrice">Product Price:</label>
+          <input
+            class="border-2 border-slate-700 rounded"
+            type="text"
+            id="productPrice"
+          />
+        </div>
+        <div class="py-2 text-center">
+          <label for="quantity">Quantity:</label>
+          <input
+            class="border-2 border-slate-700 rounded"
+            type="text"
+            id="quantity"
+          />
+        </div>
+        <div class="py-2 text-center">
+          <button
+            class="py-2 px-4 bg-red-300 border-slate-500 border-2 rounded"
+            onclick="addToCart()"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
