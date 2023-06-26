@@ -1,9 +1,9 @@
 let products = [
     {
+      id : "111",
         details:{
             name : "Samsung",
             img : "./src/images/img1.avif",
-            id : "001"
 
         },
         unitPrice : "1000",
@@ -11,10 +11,10 @@ let products = [
         subTotal : "2000",
     },
     {
+      id : "112",
         details:{
             name : "Samsung1",
             img : "./src/images/img2.avif",
-            id : "002"
 
         },
         unitPrice : "1000",
@@ -22,10 +22,10 @@ let products = [
         subTotal : "2000",
     },
     {
+      id : "113",
         details:{
             name : "Samsung3",
             img : "./src/images/img3.avif",
-            id : "003"
 
         },
         unitPrice : "1000",
@@ -33,10 +33,10 @@ let products = [
         subTotal : "2000",
     },
     {
+      id : "114",
         details:{
             name : "Samsung4",
             img : "./src/images/img4.avif",
-            id : "004"
 
         },
         unitPrice : "1000",
@@ -44,10 +44,10 @@ let products = [
         subTotal : "2000",
     },
     {
+      id : "115",
         details:{
             name : "Samsung5",
             img : "./src/images/img5.avif",
-            id : "005"
 
         },
         unitPrice : "1000",
@@ -78,7 +78,7 @@ let readProducts = () => {
               <p class="text-gray-900 whitespace-no-wrap" id="pName">
                 ${product.details.name}
               </p>
-              <p class="text-gray-600 whitespace-no-wrap">${product.details.id}</p>
+              <p class="text-gray-600 whitespace-no-wrap">${product.id}</p>
             </div>
           </div>
         </td>
@@ -105,14 +105,22 @@ let readProducts = () => {
           class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
         >
           <button
+            onclick ="addToCart(${product.id})"
             type="button"
-            class="inline-block text-gray-500 hover:text-gray-700"
+            class="inline-block text-yellow-500 hover:text-white p-3 bg-slate-600 rounded"
           >
-            Add To Card
+            Add To Cart
           </button>
         </td>
       </tr>`
     }
 }
-
 readProducts();
+
+
+function addToCart(id){
+  let currentProduct = products.find(item => item.id === id);
+  console.log(currentProduct);
+  console.log(products);
+  window.location = `./src/pages/cart.html?id=${id}`;
+}
