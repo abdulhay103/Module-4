@@ -1,3 +1,19 @@
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  ready()
+}
+
+function ready(){
+  readProducts();
+  let addToCartBtn = document.getElementById("addToCartBtn");
+  for(let i=0; i < addToCartBtn.length; i++){
+    let btn = addToCartBtn[i]
+    console.log(btn);
+  }
+
+}
+
 let products = [
     {
       id : "111",
@@ -105,7 +121,8 @@ let readProducts = () => {
           class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
         >
           <button
-            onclick ="addToCart(${product.id})"
+            onclick = "addToCart(${product.id})"
+            id = "addToCartBtn"
             type="button"
             class="inline-block text-yellow-500 hover:text-white p-3 bg-slate-600 rounded"
           >
@@ -115,8 +132,6 @@ let readProducts = () => {
       </tr>`
     }
 }
-readProducts();
-
 
 function addToCart(id){
   let currentProduct = products.find(item => item.id === id);
