@@ -73,8 +73,6 @@ let products = [
     }
 ]
 
-console.log(typeof products);
-
 
 let readProducts = () => {
     let tbody1 = document.getElementById("tbody1");
@@ -123,23 +121,15 @@ let readProducts = () => {
         <td
           class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
         >
-          <button
-            onclick = "addToCart(${product.id}, ${product.subTotal}, ${product.details.img},${product.details.name})"
-            id = "addToCartBtn"
-            type="button"
-            class="inline-block text-yellow-500 hover:text-white p-3 bg-slate-600 rounded"
-          >
-            Add To Cart
-          </button>
+        <button onclick="addToCart(${JSON.stringify(product)})" id="addToCartBtn" type="button" class="inline-block text-yellow-500 hover:text-white p-3 bg-slate-600 rounded">Add To Cart</button>
         </td>
       </tr>`
     })
 }
 
-function addToCart(id, subTotal, img, name) {
+function addToCart(product) {
   let tbody2 = document.getElementById("tbody2");
-  console.log(img);
-  
+  console.log(product);
       tbody2.innerHTML += `<tr>
       <td
         class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
@@ -148,23 +138,21 @@ function addToCart(id, subTotal, img, name) {
           <div class="flex-shrink-0 w-10 h-10">
             <img
               class="w-full h-full rounded-full"
-              src="${img}"
+              src=""
               alt="Produc Image"
               id="pImg"
             />
           </div>
           <div class="ml-3">
-            <p class="text-gray-900 whitespace-no-wrap" id="pName">
-              ${name}
-            </p>
-            <p class="text-gray-600 whitespace-no-wrap">${id}</p>
+            <p class="text-gray-900 whitespace-no-wrap" id="pName"></p>
+            <p class="text-gray-600 whitespace-no-wrap"></p>
           </div>
         </div>
       </td>
       <td
         class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
       >
-      <p class="text-gray-900 whitespace-no-wrap">$${subTotal}</p>
+      <p class="text-gray-900 whitespace-no-wrap">$</p>
         <p class="text-gray-600 whitespace-no-wrap">USD</p>
       </td>
     </tr>`
