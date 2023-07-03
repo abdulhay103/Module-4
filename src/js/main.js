@@ -103,7 +103,7 @@ function addToCart(id,unitPrice, qty,) {
         </div>
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-      <input type="text" id="unitPrice" value="${unitPrice}" />
+      <p class="text-gray-600 whitespace-no-wrap">${unitPrice}</p>
       <p class="text-gray-600 whitespace-no-wrap">USD</p>
     </td>
     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
