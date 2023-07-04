@@ -3,7 +3,6 @@ let priceArea = document.getElementById("tFooter");
 
 function addToCart(id, unitPrice, qty) {
     let totalPrice = unitPrice * qty;
-    let sum = []
   
     tbody2.insertAdjacentHTML(
       "beforeend",
