@@ -4,6 +4,7 @@ let readProducts = () => {
   let tbody1 = document.getElementById("tbody1");
 
   products.forEach((product) => {
+    let subTotal = product.unitPrice * product.qty;
     tbody1.innerHTML += `<tr>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <div class="flex">
@@ -29,7 +30,7 @@ let readProducts = () => {
         <p class="text-gray-900 whitespace-no-wrap">${product.qty}</p>
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap">$${product.unitPrice * product.qty}</p>
+        <p class="text-gray-900 whitespace-no-wrap">$${subTotal}</p>
         <p class="text-gray-600 whitespace-no-wrap">USD</p>
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">
